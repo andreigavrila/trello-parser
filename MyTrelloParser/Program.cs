@@ -15,7 +15,7 @@ namespace MyTrelloParser
             var includeContentType = true;
             var includeRecommandationType = true;
 
-            string[] lists = new string[] { "58698454901c657ae7eba794", "589ad316b7fbc3e5750c79a6", "590c363d74108d01c3a51321", "58bd6bad04b13291928b4ac7", "58e752764f4eb1ebe1be6b6e", "594907cb09017a136ef88632", "59326aced02f9060b4d0239c", "595a0163be1c060b0f9f13f4" };
+            string[] lists = new string[] { "5a48fb9eed304f607a0fd5b1", "5a7229582d13b55f7fd3276f", "5a9a5b66201a52ca049c6935", "5ac11cf8e23a67cc60610574"};
 
             RecomandationType recommandationType = new RecomandationType();
             ContentType contentType = new ContentType();
