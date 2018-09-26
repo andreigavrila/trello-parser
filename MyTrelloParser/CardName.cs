@@ -20,7 +20,6 @@ namespace MyTrelloParser
             if (!cardName.Contains("[") || !cardName.Contains("]"))
             {
                 Title = cardName;
-                return;
             }
             else
             {
