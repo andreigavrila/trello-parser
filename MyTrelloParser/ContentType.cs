@@ -4,27 +4,25 @@ using System.Text;
 
 namespace MyTrelloParser
 {
-    public class ContentType
+    public class ContentTypeCounter
     {
         Dictionary<string, int> types = new Dictionary<string,int>();
 
-        public CardName ParseContentType(string input)
+        public void Process(Card card)
         {
-            CardName cardName = new CardName(input);
+            string contentType = card.ContentType;
 
-            if(!String.IsNullOrEmpty(cardName.ContentType))
+            if(!String.IsNullOrEmpty(contentType))
             {
-                if (types.ContainsKey(cardName.ContentType))
+                if (types.ContainsKey(contentType))
                 {
-                    types[cardName.ContentType] = types[cardName.ContentType] + 1;
+                    types[contentType] = types[contentType] + 1;
                 }
                 else
                 {
-                    types[cardName.ContentType] = 1;
+                    types[contentType] = 1;
                 }
             }
-
-            return cardName;
         }
 
         public override string ToString()
