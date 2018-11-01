@@ -10,10 +10,10 @@ namespace MyTrelloParser
     {
         public static bool IsRecomandationType(string labelName)
         {
-            if (String.Equals(labelName, RecomandationTypeEnum.Great.ToString(), StringComparison.InvariantCultureIgnoreCase) ||
-                String.Equals(labelName, RecomandationTypeEnum.Good.ToString(), StringComparison.InvariantCultureIgnoreCase) ||
-                String.Equals(labelName, RecomandationTypeEnum.Maybe.ToString(), StringComparison.InvariantCultureIgnoreCase) ||
-                String.Equals(labelName, RecomandationTypeEnum.Hmm.ToString(), StringComparison.InvariantCultureIgnoreCase))
+            if (String.Equals(labelName, RecomandationType.Great.ToString(), StringComparison.InvariantCultureIgnoreCase) ||
+                String.Equals(labelName, RecomandationType.Good.ToString(), StringComparison.InvariantCultureIgnoreCase) ||
+                String.Equals(labelName, RecomandationType.Maybe.ToString(), StringComparison.InvariantCultureIgnoreCase) ||
+                String.Equals(labelName, RecomandationType.Hmm.ToString(), StringComparison.InvariantCultureIgnoreCase))
             {
                 return true;
             }
@@ -21,29 +21,29 @@ namespace MyTrelloParser
             return false;
         }
 
-        public static RecomandationTypeEnum Parse(string labelName)
+        public static RecomandationType Parse(string labelName)
         {
-            if (String.Equals(labelName, RecomandationTypeEnum.Great.ToString(), StringComparison.InvariantCultureIgnoreCase))
+            if (String.Equals(labelName, RecomandationType.Great.ToString(), StringComparison.InvariantCultureIgnoreCase))
             {
-                return RecomandationTypeEnum.Great;
+                return RecomandationType.Great;
             }
 
-            if (String.Equals(labelName, RecomandationTypeEnum.Good.ToString(), StringComparison.InvariantCultureIgnoreCase))
+            if (String.Equals(labelName, RecomandationType.Good.ToString(), StringComparison.InvariantCultureIgnoreCase))
             {
-                return RecomandationTypeEnum.Good;
+                return RecomandationType.Good;
             }
 
-            if (String.Equals(labelName, RecomandationTypeEnum.Maybe.ToString(), StringComparison.InvariantCultureIgnoreCase))
+            if (String.Equals(labelName, RecomandationType.Maybe.ToString(), StringComparison.InvariantCultureIgnoreCase))
             {
-                return RecomandationTypeEnum.Maybe;
+                return RecomandationType.Maybe;
             }
 
-            if (String.Equals(labelName, RecomandationTypeEnum.Hmm.ToString(), StringComparison.InvariantCultureIgnoreCase))
+            if (String.Equals(labelName, RecomandationType.Hmm.ToString(), StringComparison.InvariantCultureIgnoreCase))
             {
-                return RecomandationTypeEnum.Hmm;
+                return RecomandationType.Hmm;
             }
 
-            return RecomandationTypeEnum.None;
+            return RecomandationType.None;
         }
     }
 }

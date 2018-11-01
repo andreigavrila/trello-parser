@@ -20,22 +20,22 @@ namespace MyTrelloParser.Statistics
 
         public void Process(Card card)
         {
-            if(card.RecomandationType == RecomandationTypeEnum.Great)
+            if(card.RecomandationType == RecomandationType.Great)
             {
                 Great++;
             }
 
-            if (card.RecomandationType == RecomandationTypeEnum.Good)
+            if (card.RecomandationType == RecomandationType.Good)
             {
                 Good++;
             }
 
-            if (card.RecomandationType == RecomandationTypeEnum.Maybe)
+            if (card.RecomandationType == RecomandationType.Maybe)
             {
                 Maybe++;
             }
 
-            if (card.RecomandationType == RecomandationTypeEnum.Hmm)
+            if (card.RecomandationType == RecomandationType.Hmm)
             {
                 Hmm++;
             }

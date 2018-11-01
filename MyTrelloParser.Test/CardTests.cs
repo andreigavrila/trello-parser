@@ -155,7 +155,7 @@ namespace MyTrelloParser.Test
                         }";
 
         [TestMethod]
-        [ExpectedException(typeof(Exception))]
+        [ExpectedException(typeof(ArgumentException))]
         public void Card_JsonWithoutNameThrowsException()
         {
             //arrage
@@ -169,7 +169,7 @@ namespace MyTrelloParser.Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(NullReferenceException))]
+        [ExpectedException(typeof(ArgumentException))]
         public void Card_CreatingACardWithANullStringThrowsException()
         {
             //arrage
@@ -237,7 +237,7 @@ namespace MyTrelloParser.Test
 
             //assert
             Assert.IsNotNull(sut.RecomandationType);
-            Assert.AreEqual(RecomandationTypeEnum.Great, sut.RecomandationType);
+            Assert.AreEqual(RecomandationType.Great, sut.RecomandationType);
         }
 
         [TestMethod]

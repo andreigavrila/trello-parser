@@ -54,7 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecomandationTypeHelper.cs" />
     <Compile Include="Statistics\RecomandationTypeCounter.cs" />
-    <Compile Include="RecomandationTypeEnum.cs" />
+    <Compile Include="RecomandationType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyTrelloParser
 {
-    public enum RecomandationTypeEnum
+    public enum RecomandationType
     {
         None,
         Great,

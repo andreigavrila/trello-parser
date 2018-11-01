@@ -6,13 +6,13 @@ namespace MyTrelloParser
 {
     public class ContentTypeCounter
     {
-        Dictionary<string, int> types = new Dictionary<string,int>();
+        private readonly Dictionary<string, int> types = new Dictionary<string, int>();
 
         public void Process(Card card)
         {
             string contentType = card.ContentType;
 
-            if(!String.IsNullOrEmpty(contentType))
+            if (!String.IsNullOrEmpty(contentType))
             {
                 if (types.ContainsKey(contentType))
                 {

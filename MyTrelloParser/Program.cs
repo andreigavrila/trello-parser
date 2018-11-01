@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MyTrelloParser
 {
-    class Program
+    static class Program
     {
         static bool includeContentType = true;
         static bool includeRecommandationType = true;

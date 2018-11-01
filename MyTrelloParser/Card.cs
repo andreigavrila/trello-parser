@@ -6,11 +6,9 @@ namespace MyTrelloParser
 {
     public class Card
     {
-        private dynamic jsonCard;
-
         public string ContentType { get; set; }
         public string Name { get; set; }
-        public RecomandationTypeEnum RecomandationType { get; set; }
+        public RecomandationType RecomandationType { get; set; }
         public List<string> Labels { get; set; }
 
         public List<string> Alerts { get; set; }
@@ -27,12 +25,11 @@ namespace MyTrelloParser
         {
             if (jsonCard == null)
             {
-                throw new NullReferenceException();
+                throw new System.ArgumentException("jsonCard cannot be null");
             }
 
             this.Labels = new List<string>();
             this.Alerts = new List<string>();
-            this.jsonCard = jsonCard;
 
             ProcessCardTitle(jsonCard);
 
@@ -58,7 +55,7 @@ namespace MyTrelloParser
             }
             catch (RuntimeBinderException)
             {
-                throw new Exception(String.Format("The card {0} does not contain a property name", jsonCard));
+                throw new System.ArgumentException(String.Format("The card {0} does not contain a property name", jsonCard));
             }
         }
         private void ProcessLabels(dynamic jsonCard)
@@ -69,9 +66,9 @@ namespace MyTrelloParser
                 {
                     string labelName = (String)label.name;
 
-                    RecomandationTypeEnum recommandation = RecomandationTypeHelper.Parse(labelName);
+                    RecomandationType recommandation = RecomandationTypeHelper.Parse(labelName);
 
-                    if (recommandation != RecomandationTypeEnum.None)
+                    if (recommandation != RecomandationType.None)
                     {
                         RecomandationType = recommandation;
                     }
@@ -83,7 +80,7 @@ namespace MyTrelloParser
             }
             catch (RuntimeBinderException)
             {
-                throw new Exception(String.Format("The card {0} does not contain a property name", jsonCard));
+                throw new System.ArgumentException(String.Format("The card {0} does not contain a property name", jsonCard));
             }
         }
     }
