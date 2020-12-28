@@ -17,7 +17,7 @@ namespace MyTrelloParser
         {
             FullTitle = cardName;
 
-            if (!cardName.Contains("[") || !cardName.Contains("]"))
+            if (!cardName.Contains("["))
             {
                 Title = cardName;
             }

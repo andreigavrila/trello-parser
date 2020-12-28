@@ -45,7 +45,7 @@ namespace MyTrelloParser
                 if (processedName.Length == 1)
                 {
                     Name = processedName[0];
-                    Alerts.Add(String.Format("The card {0} does not have a content type", Name));
+                    Alerts.Add($"The card {Name} does not have a content type");
                 }
                 else
                 {
@@ -55,7 +55,7 @@ namespace MyTrelloParser
             }
             catch (RuntimeBinderException)
             {
-                throw new System.ArgumentException(String.Format("The card {0} does not contain a property name", jsonCard));
+                throw new System.ArgumentException($"The card {jsonCard} does not contain a property name");
             }
         }
         private void ProcessLabels(dynamic jsonCard)
@@ -80,7 +80,7 @@ namespace MyTrelloParser
             }
             catch (RuntimeBinderException)
             {
-                throw new System.ArgumentException(String.Format("The card {0} does not contain a property name", jsonCard));
+                throw new System.ArgumentException($"The card {jsonCard} does not contain a property name");
             }
         }
     }

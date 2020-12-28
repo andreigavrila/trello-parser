@@ -12,6 +12,6 @@ namespace MyTrelloParser
         Great,
         Good,
         Maybe,
-        Hmm,
+        Nope,
     }
 }

@@ -11,19 +11,21 @@ namespace MyTrelloParser
 {
     static class Program
     {
+        private const string RESULTS_FILE_NAME = "output.txt";
+        private const string INPUT_FILE_NAME = "trello.json";
         static bool includeContentType = true;
         static bool includeRecommandationType = true;
 
         static void Main(string[] args)
         {
-            string[] lists = new string[] { "5bb314fee854c333677d8a0e", "5b93e733f2ef885fb29be8f4", "5b61a4483272e781c65b9fa5", "5b392905df03486c76f6278a", "5b0d6c6e6014559ecc8d9c4c", "5ae864b4252da993a942e236", "5ac11cf8e23a67cc60610574", "5a9a5b66201a52ca049c6935", "5a7229582d13b55f7fd3276f", "5a48fb9eed304f607a0fd5b1" };
+            string[] lists = new string[] { "5fc7df08750fa96d41a9764b", "5fa05cae67d30c0e85b2015b", "5f7ec0e5f134646f9781bedc", "5f4e5de970b38446c1fc0487", "5f2e7afe94a53d27e5b41e1b", "5f01a22c51f8b417935a40a0", "5ecd1771f0214e327d3ca442", "5ead4d66a5c32e62368dca69", "5e8749c0cc604238c91c7f3f", "5e5b6401d05793695b471336", "5e35f912c3d1c1813621afe5", "5e0384a7352563886c120aa0" };
 
             RecomandationTypeCounter recommandationTypeCounter = new RecomandationTypeCounter();
             ContentTypeCounter contentTypeCounter = new ContentTypeCounter();
 
-            using (StreamWriter w = new StreamWriter("output.txt"))
+            using (StreamWriter w = new StreamWriter(RESULTS_FILE_NAME))
             {
-                using (StreamReader r = new StreamReader("trello.json"))
+                using (StreamReader r = new StreamReader(INPUT_FILE_NAME))
                 {
                     string json = r.ReadToEnd();
 

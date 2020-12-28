@@ -13,7 +13,7 @@ namespace MyTrelloParser
             if (String.Equals(labelName, RecomandationType.Great.ToString(), StringComparison.InvariantCultureIgnoreCase) ||
                 String.Equals(labelName, RecomandationType.Good.ToString(), StringComparison.InvariantCultureIgnoreCase) ||
                 String.Equals(labelName, RecomandationType.Maybe.ToString(), StringComparison.InvariantCultureIgnoreCase) ||
-                String.Equals(labelName, RecomandationType.Hmm.ToString(), StringComparison.InvariantCultureIgnoreCase))
+                String.Equals(labelName, RecomandationType.None.ToString(), StringComparison.InvariantCultureIgnoreCase))
             {
                 return true;
             }
@@ -38,9 +38,9 @@ namespace MyTrelloParser
                 return RecomandationType.Maybe;
             }
 
-            if (String.Equals(labelName, RecomandationType.Hmm.ToString(), StringComparison.InvariantCultureIgnoreCase))
+            if (String.Equals(labelName, RecomandationType.Nope.ToString(), StringComparison.InvariantCultureIgnoreCase))
             {
-                return RecomandationType.Hmm;
+                return RecomandationType.Nope;
             }
 
             return RecomandationType.None;

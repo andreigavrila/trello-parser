@@ -11,12 +11,7 @@ namespace MyTrelloParser.Statistics
         public int Great { get; set; }
         public int Good { get; set; }
         public int Maybe { get; set; }
-        public int Hmm { get; set; }
-
-        public RecomandationTypeCounter()
-        {
-            Great = Good = Maybe = Hmm = 0;
-        }
+        public int Nope { get; set; }
 
         public void Process(Card card)
         {
@@ -25,25 +20,25 @@ namespace MyTrelloParser.Statistics
                 Great++;
             }
 
-            if (card.RecomandationType == RecomandationType.Good)
+            else if (card.RecomandationType == RecomandationType.Good)
             {
                 Good++;
             }
 
-            if (card.RecomandationType == RecomandationType.Maybe)
+            else if (card.RecomandationType == RecomandationType.Maybe)
             {
                 Maybe++;
             }
 
-            if (card.RecomandationType == RecomandationType.Hmm)
+            else if (card.RecomandationType == RecomandationType.Nope)
             {
-                Hmm++;
+                Nope++;
             }
         }
 
         public override string ToString()
         {
-            return String.Format("Great: {0}, Good: {1}, Maybe: {2}, Hmm: {3}", Great, Good, Maybe, Hmm);
+            return $"Great: {Great}, Good: {Good}, Maybe: {Maybe}, Hmm: {Nope}";
         }
     }
 }
